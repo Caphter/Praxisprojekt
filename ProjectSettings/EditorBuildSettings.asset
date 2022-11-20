@@ -4,5 +4,21 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 0
+    path: Assets/[Scenes]/Initial Scene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/[Scenes]/Fahrradfahrer.unity
+    guid: d61743b35d202fc43bf35260d55c1d9b
+  - enabled: 0
+    path: Assets/Samples/Ultraleap Tracking/5.13.0/Examples/Interaction Engine Examples/5.
+      Anchors/Anchors.unity
+    guid: 7b4a5eb0c5d8ca242976d22c7980ab19
+  m_configObjects:
+    Varjo.XR.Settings: {fileID: 11400000, guid: 3fd6c26266f2c8e4a817517ef2240ead, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3f391d533ce561145946503049732b64, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2d9e287b88b48874185ffc7fe8ba4c70, type: 2}

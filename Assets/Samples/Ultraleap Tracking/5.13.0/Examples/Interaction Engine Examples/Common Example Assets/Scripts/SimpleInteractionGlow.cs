@@ -21,7 +21,7 @@ namespace UHI.Tracking.InteractionEngine.Examples
     [RequireComponent(typeof(InteractionBehaviour))]
     public class SimpleInteractionGlow : MonoBehaviour
     {
-        public ShouldBeActivated correspodingShouldBeActivatedScript;
+        //public ShouldBeActivated correspodingShouldBeActivatedScript;
 
         [Tooltip("If enabled, the object will lerp to its hoverColor when a hand is nearby.")]
         public bool useHover = true;

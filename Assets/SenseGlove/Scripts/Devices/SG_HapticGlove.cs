@@ -691,7 +691,7 @@ namespace SG
             hapticStream.ClearVibrations();
             if (this.lastGlove != null && !this.bypassingHaptics)
             {
-                lastGlove.SendHaptics(lastFFBLevels, SG_BuzzCmd.Off, ThumperCmd.Off);
+                //lastGlove.SendHaptics(lastFFBLevels, SG_BuzzCmd.Off, ThumperCmd.Off);
             }
         }
 
@@ -701,7 +701,7 @@ namespace SG
             hapticStream.ClearAll();
             if (this.lastGlove != null && !this.bypassingHaptics)
             {
-                lastGlove.SendHaptics(SG_FFBCmd.Off, SG_BuzzCmd.Off, ThumperCmd.Off);
+                //lastGlove.SendHaptics(SG_FFBCmd.Off, SG_BuzzCmd.Off, ThumperCmd.Off);
             }
         }
 
@@ -778,6 +778,7 @@ namespace SG
         }
 
         /// <summary> Process all haptics that were sent this frame and that are still active. </summary>
+        [System.Obsolete]
         public void UpdateHaptics(float dT)
         {
             SG_FFBCmd newFFB; SG_BuzzCmd newBuzz; ThumperCmd newThumper;
@@ -828,6 +829,7 @@ namespace SG
             CheckFingerMovement(Time.deltaTime);
         }
 
+        [System.Obsolete]
         protected virtual void LateUpdate()
         {
             newPoseNeeded = true; //next frame we're allowed to update the pose again.

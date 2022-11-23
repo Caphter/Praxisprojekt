@@ -45,7 +45,7 @@ namespace SG.Examples
 		SGCore.Haptics.SG_FFBCmd ffbCmd = SG_FFBCmd.Off;
 		SGCore.Haptics.SG_BuzzCmd buzzCmd = SG_BuzzCmd.Off;
 		SGCore.Haptics.ThumperCmd thumprCmd = ThumperCmd.Off;
-		bool setup = false;
+		//bool setup = false;
 		bool sComRuns = false;
 		int sgThump = 0;
 		string thumpKey = "sgThump";
@@ -299,8 +299,9 @@ namespace SG.Examples
 			gloveAngleWindow.senseGlove = null;
 		}
 
-		// Update is called once per frame
-		void Update()
+        // Update is called once per frame
+        [System.Obsolete]
+        void Update()
 		{
 			if (!sComRuns)
             {

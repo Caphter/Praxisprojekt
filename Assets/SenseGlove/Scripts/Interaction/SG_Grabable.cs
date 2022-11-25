@@ -145,8 +145,7 @@ namespace SG
         }
 
         /// <summary> Return this object base to it's original position, determined by the SaveCurrentLocation. (Called during Setup) </summary>
-        /// <param name="resetRBStats">If true, this paratmeter resets the Rigidbody's stats as well (UseGravity, IsKinematic </param>
-        public void ResetLocation(bool resetRBStats)
+        public void ResetLocation()
         {
             Transform myTransf = this.MyTransform;
             Vector3 currBasePos; Quaternion currBaseRot;
@@ -155,17 +154,11 @@ namespace SG
             {
                 this.physicsBody.velocity = Vector3.zero;
                 this.physicsBody.angularVelocity = Vector3.zero;
-                if (resetRBStats && this.rbDefaults != null)
-                {
-                    this.physicsBody.useGravity = this.rbDefaults.usedGravity;
-                    this.physicsBody.isKinematic = this.rbDefaults.wasKinematic;
-                }
             }
             myTransf.position = currBasePos;
             myTransf.rotation = currBaseRot;
-
+            
         }
-
 
 
         //-----------------------------------------------------------------------------------------------------------------------------------
@@ -271,10 +264,7 @@ namespace SG
                 {
                     if (this.physicsBody != null) // I have a rigidBody. Add Hand Colliders to me as opposed to the hand
                     {
-                        //if (this.name.Contains("Coil"))
-                        //{
-                        //    Debug.Log("Incorporating fingers into my RigidBody");
-                        //}
+                       // Debug.Log("Incorporating fingers into my RigidBody");
                         handPhysics.SetCollisionParent(this.physicsBody);
                     }
                     else
@@ -312,12 +302,8 @@ namespace SG
                     if (this.physicsBody != null) // I have a rigidBody. return rigidbodies
                     //if (IsMovedByPhysics) // I have a rigidBody. return rigidbodies
                     {
-                        //if (this.name.Contains("Coil"))
-                        //{
-                        //    Debug.Log("Returning fingers back to physicsCollider");
-                        //}
-                        //  Debug.Log("Returning fingers back to physicsCollider");
-                        handPhysics.SetIgnoreCollision(this.GetPhysicsColliders(), true); //ignore collision until the colliders are no longer near the object - prevent tossing.
+                      //  Debug.Log("Returning fingers back to physicsCollider");
+                        handPhysics.SetIgnoreCollision(this.GetPhysicsColliders(), true); //it's now no (longer) colliding
                         handPhysics.MarkForUncollision(this.physicsBody, this.GetPhysicsColliders());
                         handPhysics.ReturnColliders();
                     }
@@ -356,7 +342,7 @@ namespace SG
                     physicsBody.angularVelocity = Vector3.zero;
                     physicsBody.velocity = Vector3.zero;
                     // this.IsKinematic = currKin;
-                   // Debug.Log("Tranferring. Zeroien velocity");
+                    Debug.Log("Tranferring. Zeroien velocity");
                 }
             }
             //log my pos/rot on the change
@@ -512,12 +498,7 @@ namespace SG
                 safeguardFrame = -1;
             }
             //ToDo: Validate destroyed GrabScripts?
-            
-            if (!this.IsGrabbed()) //Ensure 
-            {
-                UpdateInteractable();
-            }
-
+            UpdateInteractable();
             if (alwaysTrackVelocity || this.IsMovedByPhysics) //only keep these if we have a non-kinematic rigidBody
             {
                 UpdateVelocity(Time.deltaTime);

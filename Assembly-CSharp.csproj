@@ -128,6 +128,7 @@
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\ConstantRotate.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleInteractionEmission.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_HandStateIndicator.cs" />
+    <Compile Include="Assets\[Scripts]\Drill\SG_HapticPulse.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\3. Interaction Callbacks\Scripts\TransformHandle.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_Haptics.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_SendWaveform.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_Waveform.cs" />
     <Compile Include="Assets\SenseGlove\Models\DK1CAD\SG_DK1Model.cs" />
     <Compile Include="Assets\[Scripts]\Tangible Scripts\HandController.cs" />
+    <Compile Include="Assets\[Scripts]\Character Movement Helper.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialProperties.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Calibration\SG_HandProfiles.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SGEx_TestWaveform.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Devices\SG_DeviceSelector.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_Breakable.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialDetector.cs" />
+    <Compile Include="Assets\[Scripts]\Drill\DrillScript.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_HandLayerUI.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_SnapOptions.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_SelectHandModel.cs" />
@@ -177,6 +180,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_IMUTracking.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_BreakableContainer.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\6. Dynamic UI\Scripts\WorkstationBehaviourExample.cs" />
+    <Compile Include="Assets\[Scripts]\Drill\ChangeTrigger.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_ShowGloveAngles.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleRendererUtil.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_SmoothMovement.cs" />
@@ -186,7 +190,7 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\[Scripts]\Character Movement Helper.cs" />
+    <Compile Include="Assets\Autoassign_SG_Trackers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

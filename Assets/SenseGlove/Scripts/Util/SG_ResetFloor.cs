@@ -22,7 +22,7 @@ namespace SG.Util
             if (args.grabable.tag.Contains(this.resetTag))
             {
                 Debug.Log("Resetting " + args.grabable.name);
-                args.grabable.ResetLocation(true);
+                //args.grabable.ResetLocation(true);
             }
         }
 

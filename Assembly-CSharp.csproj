@@ -137,7 +137,6 @@
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_Waveform.cs" />
     <Compile Include="Assets\SenseGlove\Models\DK1CAD\SG_DK1Model.cs" />
     <Compile Include="Assets\[Scripts]\Tangible Scripts\HandController.cs" />
-    <Compile Include="Assets\[Scripts]\Character Movement Helper.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialProperties.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Calibration\SG_HandProfiles.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SGEx_TestWaveform.cs" />
@@ -191,8 +190,9 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\ReactivateHands.cs" />
-    <Compile Include="Assets\AutosetSGTrackers.cs" />
+    <Compile Include="Assets\[Scripts]\ReactivateHands.cs" />
+    <Compile Include="Assets\[Scripts]\AutosetSGTrackers.cs" />
+    <Compile Include="Assets\[Scripts]\CharacterMovementHelperNeu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

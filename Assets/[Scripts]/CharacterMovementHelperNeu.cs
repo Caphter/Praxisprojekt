@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class CharacterMovementHelper : MonoBehaviour
+
+public class CharacterMovementHelperNeu : MonoBehaviour
 {
     private XRRig XRRig;
     private CharacterController characterController;

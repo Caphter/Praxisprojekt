@@ -193,6 +193,7 @@
     <Compile Include="Assets\[Scripts]\ReactivateHands.cs" />
     <Compile Include="Assets\[Scripts]\AutosetSGTrackers.cs" />
     <Compile Include="Assets\[Scripts]\CharacterMovementHelperNeu.cs" />
+    <Compile Include="Assets\[Scripts]\HapticDeviceManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

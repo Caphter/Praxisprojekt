@@ -29,7 +29,9 @@ public class HapticDeviceManager : MonoBehaviour
     private bool controllerActivated = false;
     private bool trackerActivated = false;
 
-    private float timerCheckActiveHapticDevice = 0;
+    private float timerReset = 0;
+    public float timerTriggerAmount;
+    public int offsetZeroCounterTriggerAmount;
 
     // Devices
     [Header("Haptic Devices:")]
@@ -54,19 +56,15 @@ public class HapticDeviceManager : MonoBehaviour
     private Vector3 lastPosRightTracker;
     private Vector3 lastPosLeftTracker;
 
-    // Positions-Veränderung Berechnungsvariablen
-    //private float offsetRotationTrackerLeft;
-    //private float offsetRotationTrackerRight;
-    //private float offsetRotationControllerLeft;
-    //private float offsetRotationControllerRight;
-
-    public float offsetPositionTrackerLeft;
-    public float offsetPositionTrackerRight;
-    public float offsetPositionControllerLeft;
-    public float offsetPositionControllerRight;
+    public float offsetPositionTracker;
+    public float offsetPositionController;
 
     private float thresholdTracker;
-    private float threshholdController;
+    private float thresholdController;
+
+    
+    private int counterOffsetZero = 0;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -100,26 +98,32 @@ public class HapticDeviceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // übergibt die aktuelle Position der Controller/Tracker
         posRightController = goRightController.transform.localPosition;
         posLeftController = goLeftController.transform.localPosition;
         posLeftTracker = goLeftTracker.transform.localPosition;
         posRightTracker = goRightTracker.transform.localPosition;
 
 
-        // erhöht den Timer und ruft alle 3 Sekunden die Funktion zum checken des aktiven haptischen Gerätes auf
-        timerCheckActiveHapticDevice += Time.deltaTime;
+        // erhöht den Timer und ruft alle 3 Sekunden die Funktion auf
+        timerReset += Time.deltaTime;
 
-        if(timerCheckActiveHapticDevice >= 3f)
+        if(timerReset >= timerTriggerAmount)
         {
-            checkActiveHapticDevice();
+            OffsetDecider();
+            ResetPosOffsets();
         }
 
-        
+        OffsetUpdater();
+    }
+
+    public void OffsetUpdater()
+    {
         // Checkt, ob es eine Änderung in der Positionen der Geräte gab zum letzten Frame
-        if(lastPosLeftController != posLeftController || lastPosRightController != posRightController)
+        if (lastPosLeftController != posLeftController || lastPosRightController != posRightController)
         {
-            offsetPositionControllerLeft += (float)System.Math.Round(Mathf.Abs(posLeftController.x - lastPosLeftController.x),2) + (float)System.Math.Round(Mathf.Abs(posLeftController.y - lastPosLeftController.y),2) + (float)System.Math.Round(Mathf.Abs(posLeftController.z - lastPosLeftController.z),2);
-            offsetPositionControllerRight += Mathf.Abs(posRightController.x - lastPosRightController.x) + Mathf.Abs(posRightController.y - lastPosRightController.y) + Mathf.Abs(posRightController.z - lastPosRightController.z);
+            offsetPositionController += (float)System.Math.Round(Mathf.Abs(posLeftController.x - lastPosLeftController.x), 2) + (float)System.Math.Round(Mathf.Abs(posLeftController.y - lastPosLeftController.y), 2) + (float)System.Math.Round(Mathf.Abs(posLeftController.z - lastPosLeftController.z), 2);
+            offsetPositionController += (float)System.Math.Round(Mathf.Abs(posRightController.x - lastPosRightController.x), 2) + (float)System.Math.Round(Mathf.Abs(posRightController.y - lastPosRightController.y), 2) + (float)System.Math.Round(Mathf.Abs(posRightController.z - lastPosRightController.z), 2);
 
             lastPosLeftController = goLeftController.transform.localPosition;
             lastPosRightController = goRightController.transform.localPosition;
@@ -127,19 +131,85 @@ public class HapticDeviceManager : MonoBehaviour
 
         if (lastPosLeftTracker != posLeftTracker || lastPosRightTracker != posRightTracker)
         {
-            offsetPositionTrackerLeft += Mathf.Abs(posLeftTracker.x - lastPosLeftTracker.x) + Mathf.Abs(posLeftTracker.y - lastPosLeftTracker.y) + Mathf.Abs(posLeftTracker.z - lastPosLeftTracker.z);
-            offsetPositionTrackerRight += Mathf.Abs(posRightTracker.x - lastPosRightTracker.x) + Mathf.Abs(posRightTracker.y - lastPosRightTracker.y) + Mathf.Abs(posRightTracker.z - lastPosRightTracker.z);
+            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posLeftTracker.x - lastPosLeftTracker.x), 2) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.y - lastPosLeftTracker.y), 2) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.z - lastPosLeftTracker.z), 2);
+            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posRightTracker.x - lastPosRightTracker.x), 2) + (float)System.Math.Round(Mathf.Abs(posRightTracker.y - lastPosRightTracker.y), 2) + (float)System.Math.Round(Mathf.Abs(posRightTracker.z - lastPosRightTracker.z), 2);
 
             lastPosLeftTracker = goLeftTracker.transform.localPosition;
             lastPosRightTracker = goRightTracker.transform.localPosition;
         }
+    }
+
+    public void OffsetDecider()
+    {
+        if(offsetPositionController + offsetPositionTracker == 0)
+        {
+            counterOffsetZero++;
+
+            if(counterOffsetZero == offsetZeroCounterTriggerAmount && !senseGlovesDevice.activeSelf)
+            {
+                ActivateHandTracking();
+                counterOffsetZero = 0;
+            }
+        }
+        else
+        {
+            if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
+            {
+                if(offsetPositionController > offsetPositionTracker)
+                {
+                    ActivateController();
+                }
+                else
+                {
+                    ActivateSenseGloves();
+                }
+            }
+        }
 
     }
 
+    public void ResetPosOffsets()
+    {
+        timerReset = 0f;
+
+        offsetPositionController = 0f;
+        offsetPositionTracker = 0f;
+    }
+
+    public void ActivateSenseGloves()
+    {
+        //controllerDevice.SetActive(false);
+        //handTrackingDevice.SetActive(false);
+        //senseGlovesDevice.SetActive(true);
+        Debug.Log("SG activiert");
+
+        // Code für entsprechende Interaktions-Objekte zum passenden Device
+    }
+
+    public void ActivateController()
+    {
+        //handTrackingDevice.SetActive(false);
+        //senseGlovesDevice.SetActive(false);
+        //controllerDevice.SetActive(true);
+        Debug.Log("Controller activiert");
+
+        // Code für entsprechende Interaktions-Objekte zum passenden Device
+    }
+
+    public void ActivateHandTracking()
+    {
+        //controllerDevice.SetActive(false);
+        //senseGlovesDevice.SetActive(false);
+        //handTrackingDevice.SetActive(true);
+
+        Debug.Log("Hand Tracking activiert");
+        // Code für entsprechende Interaktions-Objekte zum passenden Device
+    }
+
+    /*
     public void checkActiveHapticDevice()
     {
         // initiales zurücksetzen der tracking-Variablen für neue Iteration
-        timerCheckActiveHapticDevice = 0f;
         controllerActivated = false;
         trackerActivated = false;
 
@@ -163,4 +233,5 @@ public class HapticDeviceManager : MonoBehaviour
         }
 
     }
+    */
 }

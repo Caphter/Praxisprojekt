@@ -56,11 +56,11 @@ public class HapticDeviceManager : MonoBehaviour
     private Vector3 lastPosRightTracker;
     private Vector3 lastPosLeftTracker;
 
-    public float offsetPositionTracker;
-    public float offsetPositionController;
+    private float offsetPositionTracker;
+    private float offsetPositionController;
 
-    private float thresholdTracker;
-    private float thresholdController;
+    private float thresholdTracker = 1f;
+    private float thresholdController = 2f;
 
     
     private int counterOffsetZero = 0;
@@ -70,9 +70,9 @@ public class HapticDeviceManager : MonoBehaviour
     void Awake()
     {
         // Device Hierarchie Start
-        //senseGlovesDevice.SetActive(false);
-        //controllerDevice.SetActive(false);
-        //handTrackingDevice.SetActive(false);
+        senseGlovesDevice.SetActive(false);
+        controllerDevice.transform.localPosition = new Vector3(15f,0f,0f);
+        handTrackingDevice.SetActive(true);
 
         StartCoroutine(InitializePositions());
 
@@ -83,6 +83,8 @@ public class HapticDeviceManager : MonoBehaviour
     IEnumerator InitializePositions()
     {
         yield return new WaitForSeconds(2f);
+
+        checkActiveHapticDevice();
 
         posRightController = goRightController.transform.localPosition;
         posLeftController = goLeftController.transform.localPosition;
@@ -145,7 +147,7 @@ public class HapticDeviceManager : MonoBehaviour
         {
             counterOffsetZero++;
 
-            if(counterOffsetZero == offsetZeroCounterTriggerAmount && !senseGlovesDevice.activeSelf)
+            if(counterOffsetZero == offsetZeroCounterTriggerAmount && !handTrackingDevice.activeSelf)
             {
                 ActivateHandTracking();
                 counterOffsetZero = 0;
@@ -155,17 +157,18 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker)
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position != new Vector3(0,0,0)) // CHECKEN???
                 {
                     ActivateController();
+                    counterOffsetZero = 0;
                 }
-                else
+                else if(offsetPositionController < offsetPositionTracker && !senseGlovesDevice.activeSelf)
                 {
                     ActivateSenseGloves();
+                    counterOffsetZero = 0;
                 }
             }
         }
-
     }
 
     public void ResetPosOffsets()
@@ -178,35 +181,35 @@ public class HapticDeviceManager : MonoBehaviour
 
     public void ActivateSenseGloves()
     {
-        //controllerDevice.SetActive(false);
-        //handTrackingDevice.SetActive(false);
-        //senseGlovesDevice.SetActive(true);
-        Debug.Log("SG activiert");
+        controllerDevice.transform.localPosition = new Vector3(15f, 0f, 0f);
+        handTrackingDevice.SetActive(false);
+        senseGlovesDevice.SetActive(true);
+        Debug.Log("SG aktiviert");
 
         // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
     public void ActivateController()
     {
-        //handTrackingDevice.SetActive(false);
-        //senseGlovesDevice.SetActive(false);
-        //controllerDevice.SetActive(true);
-        Debug.Log("Controller activiert");
+        handTrackingDevice.SetActive(false);
+        senseGlovesDevice.SetActive(false);
+        controllerDevice.transform.localPosition = new Vector3(0f, 0f, 0f);
+        Debug.Log("Controller aktiviert");
 
         // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
     public void ActivateHandTracking()
     {
-        //controllerDevice.SetActive(false);
-        //senseGlovesDevice.SetActive(false);
-        //handTrackingDevice.SetActive(true);
+        controllerDevice.transform.localPosition = new Vector3(15f, 0f, 0f);
+        senseGlovesDevice.SetActive(false);
+        handTrackingDevice.SetActive(true);
 
-        Debug.Log("Hand Tracking activiert");
+        Debug.Log("Hand Tracking aktiviert");
         // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
-    /*
+    
     public void checkActiveHapticDevice()
     {
         // initiales zurücksetzen der tracking-Variablen für neue Iteration
@@ -232,6 +235,8 @@ public class HapticDeviceManager : MonoBehaviour
             }
         }
 
+
+        // UI Anzeige, dass Devices nicht aktiviert sind
     }
-    */
+    
 }

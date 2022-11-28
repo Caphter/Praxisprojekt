@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bike
+  - resetable
+  - ScrewBit
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - UI
   - Body
   - Glow
-  - 
-  - 
+  - Tisch
+  - Hands
   - 
   - 
   - 

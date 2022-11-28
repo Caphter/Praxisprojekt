@@ -194,6 +194,7 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
+    <Compile Include="Assets\[Scripts]\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

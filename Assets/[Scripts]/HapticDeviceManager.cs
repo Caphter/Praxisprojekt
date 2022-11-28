@@ -32,6 +32,7 @@ public class HapticDeviceManager : MonoBehaviour
     private float timerReset = 0;
     public float timerTriggerAmount;
     public int offsetZeroCounterTriggerAmount;
+    public UIManager uiManagerScript;
 
     // Devices
     [Header("Haptic Devices:")]
@@ -62,8 +63,9 @@ public class HapticDeviceManager : MonoBehaviour
     private float thresholdTracker = 1f;
     private float thresholdController = 2f;
 
-    
     private int counterOffsetZero = 0;
+
+    
 
 
     // Start is called before the first frame update
@@ -150,6 +152,7 @@ public class HapticDeviceManager : MonoBehaviour
             if(counterOffsetZero == offsetZeroCounterTriggerAmount && !handTrackingDevice.activeSelf)
             {
                 ActivateHandTracking();
+                uiManagerScript.ActivateHandTrackingUI();
                 counterOffsetZero = 0;
             }
         }
@@ -160,11 +163,13 @@ public class HapticDeviceManager : MonoBehaviour
                 if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position != new Vector3(0,0,0)) // CHECKEN???
                 {
                     ActivateController();
+                    uiManagerScript.ActivateControllerUI();
                     counterOffsetZero = 0;
                 }
                 else if(offsetPositionController < offsetPositionTracker && !senseGlovesDevice.activeSelf)
                 {
                     ActivateSenseGloves();
+                    uiManagerScript.ActivateSenseGlovesUI();
                     counterOffsetZero = 0;
                 }
             }

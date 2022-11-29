@@ -60,7 +60,7 @@ public class HapticDeviceManager : MonoBehaviour
     private float offsetPositionTracker;
     private float offsetPositionController;
 
-    private float thresholdTracker = 1f;
+    private float thresholdTracker = 0.7f;
     private float thresholdController = 2f;
 
     private int counterOffsetZero = 0;
@@ -135,8 +135,8 @@ public class HapticDeviceManager : MonoBehaviour
 
         if (lastPosLeftTracker != posLeftTracker || lastPosRightTracker != posRightTracker)
         {
-            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posLeftTracker.x - lastPosLeftTracker.x), 2) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.y - lastPosLeftTracker.y), 2) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.z - lastPosLeftTracker.z), 2);
-            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posRightTracker.x - lastPosRightTracker.x), 2) + (float)System.Math.Round(Mathf.Abs(posRightTracker.y - lastPosRightTracker.y), 2) + (float)System.Math.Round(Mathf.Abs(posRightTracker.z - lastPosRightTracker.z), 2);
+            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posLeftTracker.x - lastPosLeftTracker.x), 3) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.y - lastPosLeftTracker.y), 3) + (float)System.Math.Round(Mathf.Abs(posLeftTracker.z - lastPosLeftTracker.z), 3);
+            offsetPositionTracker += (float)System.Math.Round(Mathf.Abs(posRightTracker.x - lastPosRightTracker.x), 3) + (float)System.Math.Round(Mathf.Abs(posRightTracker.y - lastPosRightTracker.y), 3) + (float)System.Math.Round(Mathf.Abs(posRightTracker.z - lastPosRightTracker.z), 3);
 
             lastPosLeftTracker = goLeftTracker.transform.localPosition;
             lastPosRightTracker = goRightTracker.transform.localPosition;
@@ -160,7 +160,7 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position != new Vector3(0,0,0)) // CHECKEN???
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15)
                 {
                     ActivateController();
                     uiManagerScript.ActivateControllerUI();

@@ -21,7 +21,7 @@ public class AutosetSGTrackers : MonoBehaviour
 
         ETrackedPropertyError error = new ETrackedPropertyError();
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 15; i++)
         {
             var id = new System.Text.StringBuilder(64);
             OpenVR.System.GetStringTrackedDeviceProperty((uint)i, ETrackedDeviceProperty.Prop_RenderModelName_String, id, 64, ref error);

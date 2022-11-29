@@ -14,7 +14,16 @@ public class UIManager : MonoBehaviour
 
     public bool isAutomaticMode = true;
 
-    
+    public void Test1()
+    {
+        Debug.Log("Test 1");
+    }public void Test2()
+    {
+        Debug.Log("Test 2");
+    }public void Test3()
+    {
+        Debug.Log("Test 3");
+    }
 
     void Update()
     {

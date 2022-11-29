@@ -108,6 +108,7 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\8. Swap Grasp\Scripts\SwapGraspExample.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_PassThroughCollider.cs" />
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\Explosion.cs" />
+    <Compile Include="Assets\[Scripts]\ModeSwitchHandtracking.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_HandComponent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\Fracture.cs" />
@@ -195,7 +196,6 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\[Scripts]\ModeSwitchHandtracking.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

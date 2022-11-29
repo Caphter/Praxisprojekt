@@ -12,9 +12,18 @@ public class UIManager : MonoBehaviour
     public GameObject iconHandTracking;
     public GameObject iconController;
 
+    public bool isAutomaticMode = true;
+
+    
+
     void Update()
     {
         
+    }
+
+    public void ResetScene()
+    {
+        // Reset
     }
 
     public void ActivateControllerUI()

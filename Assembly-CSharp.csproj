@@ -180,6 +180,7 @@
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\FreeMovement.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_ObjectVibration.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Controls\SG_ConfirmZone.cs" />
+    <Compile Include="Assets\[Scripts]\UIManager.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_Activator.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_IMUTracking.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_BreakableContainer.cs" />
@@ -194,7 +195,7 @@
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\[Scripts]\UIManager.cs" />
+    <Compile Include="Assets\[Scripts]\ModeSwitchHandtracking.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

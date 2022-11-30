@@ -127,6 +127,7 @@
     <Compile Include="Assets\[Scripts]\Autoassign_SG_Trackers.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_PhysicsGrab.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_HoverCollider.cs" />
+    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\Example Scene\Scripts\Example.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\IHandFeedbackDevice.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\6. Dynamic UI\Scripts\SimpleMatchAnchorScaleAndState.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Core Examples\Example Assets\ProjectionPostProcessProvider.cs" />
@@ -194,10 +195,9 @@
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_GloveDiagnostics.cs" />
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\DestroyByPosition.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearSpeedTextBehaviour.cs" />
+    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
-    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\Example Scene\Scripts\Example.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

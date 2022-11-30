@@ -56,9 +56,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\Editor\ExtendedColliders3DVersionChanges.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\3. Interaction Callbacks\Scripts\Editor\TransformHandleEditor.cs" />
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\Editor\ExtendedColliders3DEditor.cs" />
-    <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\Editor\ExtendedColliders3DVersionChanges.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

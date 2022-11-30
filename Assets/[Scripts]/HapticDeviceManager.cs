@@ -76,10 +76,7 @@ public class HapticDeviceManager : MonoBehaviour
         controllerDevice.transform.localPosition = new Vector3(15f,0f,0f);
         handTrackingDevice.SetActive(true);
 
-        StartCoroutine(InitializePositions());
-
-        Debug.Log("Zuweisung");
-        
+        StartCoroutine(InitializePositions());        
     }
 
     IEnumerator InitializePositions()

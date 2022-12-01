@@ -7,6 +7,9 @@ TagManager:
   - Bike
   - resetable
   - ScrewBit
+  - projectile
+  - FxTemporaire
+  - Deadzone
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - Hands
   - Buttons
   - Interactable
-  - 
+  - Deadzone
   - 
   - 
   - 

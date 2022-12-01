@@ -60,6 +60,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Devices\SG_Connections.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\VR\SG_XR_Devices.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Example Assets\Scripts\EditorURL.cs" />
+    <Compile Include="Assets\[Scripts]\taskMaster\Visual Indicators\ArrowScript.cs" />
     <Compile Include="Assets\[Scripts]\HapticDeviceManager.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Hands Examples\Scripts\CycleHandPairs.cs" />
     <Compile Include="Assets\[Scripts]\CharacterMovementHelperNeu.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
+    <Compile Include="Assets\ObjectDropped.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

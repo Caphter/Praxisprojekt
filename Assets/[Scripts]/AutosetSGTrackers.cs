@@ -31,7 +31,7 @@ public class AutosetSGTrackers : MonoBehaviour
                 AssignCorrespondingTrackerToIndex(i);
             }
 
-            //Debug.Log("test id " + i + ": " + id);
+            Debug.Log("test id " + i + ": " + id);
         }
     }
 
@@ -66,6 +66,12 @@ public class AutosetSGTrackers : MonoBehaviour
                 case 6:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device6;
                     break;
+                case 7:
+                    trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device7;
+                    break;
+                case 8:
+                    trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device8;
+                    break;
             }
         }
         else if(rightAssigned && index != indexOfFirstAssigned)
@@ -89,6 +95,12 @@ public class AutosetSGTrackers : MonoBehaviour
                     break;
                 case 6:
                     trackerScriptLeft.index = SteamVR_TrackedObject.EIndex.Device6;
+                    break;
+                case 7:
+                    trackerScriptLeft.index = SteamVR_TrackedObject.EIndex.Device7;
+                    break;
+                case 8:
+                    trackerScriptLeft.index = SteamVR_TrackedObject.EIndex.Device8;
                     break;
             }
         }

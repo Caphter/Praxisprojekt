@@ -22,21 +22,32 @@ public class ObjectDropped : MonoBehaviour
         
     }
 
+    public void UIReset()
+    {
+        if (isBuildIn)
+        {
+            isBuildIn = false;
+        }
+
+        this.gameObject.transform.localPosition = originPos;
+        this.gameObject.transform.localRotation = originRot;
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Deadzone" && !isBuildIn)
         {
+            // setzt die Velocity auf 0, damit beim Reset nicht weiterfliegt
+            this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             if (isMainObject)
             {
-                Debug.Log("Triggered");
-
                 this.gameObject.transform.localPosition = new Vector3(-0.877f, 0.129f, 0.293f);
                 this.gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             }
             else if(!isMainObject && !isBuildIn)
             {
-
-                Debug.Log("alter");
                 this.gameObject.transform.localPosition = originPos;
                 this.gameObject.transform.localRotation = originRot;
             }

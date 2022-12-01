@@ -65,6 +65,8 @@ public class HapticDeviceManager : MonoBehaviour
 
     private int counterOffsetZero = 0;
 
+    private bool offsetFirstControllerInput = true;
+
     
 
 
@@ -142,6 +144,12 @@ public class HapticDeviceManager : MonoBehaviour
 
     public void OffsetDecider()
     {
+        // Verhindert erstes Switchen bei fälschlichem Laden des Controller-Offsets zu Beginn der Szene
+        if (offsetFirstControllerInput)
+        {
+            offsetFirstControllerInput = false;
+        }
+
         if(offsetPositionController + offsetPositionTracker == 0)
         {
             counterOffsetZero++;
@@ -157,7 +165,7 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15)
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && !offsetFirstControllerInput)
                 {
                     ActivateController();
                     uiManagerScript.ActivateControllerUI();

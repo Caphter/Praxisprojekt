@@ -23,10 +23,18 @@ public class AssemblyManager : MonoBehaviour
 
     [Header("Snap Previews:")]
     public GameObject mittelscheibePreview;
-    public GameObject aussenscheibePreview;
+    public GameObject aussenscheibeVornePreview;
     public GameObject hauptscheibePreview;
     public List<GameObject> federnPreview;
     public List<GameObject> stiftePreview;
+
+    [Header("Real Gameobjects:")]
+    public GameObject mittelscheibeObj;
+    public GameObject aussenscheibeVorneObj;
+    public GameObject aussenscheibeHintenObj;
+    public GameObject hauptscheibeObj;
+    public List<GameObject> federnObj;
+    public List<GameObject> stifteObj;
 
 
     private void Start()

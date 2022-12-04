@@ -64,7 +64,10 @@ public class HapticDeviceManager : MonoBehaviour
     private float thresholdController = 2f;
 
     private int counterOffsetZero = 0;
-    
+
+    private float timerDelayController = 0f;
+
+    public InteractionScriptManager scriptManager;    
 
 
     // Start is called before the first frame update
@@ -107,6 +110,7 @@ public class HapticDeviceManager : MonoBehaviour
 
         // erhöht den Timer und ruft alle 3 Sekunden die Funktion auf
         timerReset += Time.deltaTime;
+        timerDelayController += Time.deltaTime;
 
         if(timerReset >= timerTriggerAmount)
         {
@@ -141,13 +145,14 @@ public class HapticDeviceManager : MonoBehaviour
 
     public void OffsetDecider()
     {
-                if(offsetPositionController + offsetPositionTracker == 0)
+        if(offsetPositionController + offsetPositionTracker == 0)
         {
             counterOffsetZero++;
 
             if(counterOffsetZero == offsetZeroCounterTriggerAmount && !handTrackingDevice.activeSelf)
             {
                 ActivateHandTracking();
+                scriptManager.SetActiveHandTracking();
                 uiManagerScript.ActivateHandTrackingUI();
                 counterOffsetZero = 0;
             }
@@ -156,9 +161,10 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15)
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && timerDelayController > 4f)
                 {
                     ActivateController();
+                    scriptManager.SetActiveController();
                     uiManagerScript.ActivateControllerUI();
                     counterOffsetZero = 0;
                 }

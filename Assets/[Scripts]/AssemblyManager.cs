@@ -101,16 +101,16 @@ public class AssemblyManager : MonoBehaviour
                 AussenscheibeVorne();
                 break;
             case 2:
-                Akkuschrauber();
+                Hauptscheibe();
                 break;
             case 3:
-                Hauptscheibe();
+                Federn();
                 break;
             case 4:
                 Stifte();
                 break;
             case 5:
-                Federn();
+                Akkuschrauber();
                 break;
         }
 
@@ -136,25 +136,76 @@ public class AssemblyManager : MonoBehaviour
         aussenscheibeVorneObj.tag = "CurrentActiveObject";
     }
 
-    public void Akkuschrauber()
-    {
-
-    }
-
     public void Hauptscheibe()
     {
+        aussenscheibeVornePreview.SetActive(false);
+        hauptscheibePreview.SetActive(true);
 
-    }
+        aussenscheibeVorneTrigger.SetActive(false);
+        hauptscheibeTrigger.SetActive(true);
 
-    public void Stifte()
-    {
+        arrowAussenscheibeVorne.SetActive(false);
+        arrowHauptscheibe.SetActive(true);
 
+        hauptscheibeObj.tag = "CurrentActiveObject";
     }
 
     public void Federn()
     {
+        hauptscheibePreview.SetActive(false);
+        foreach(GameObject obj in federnPreview)
+        {
+            obj.SetActive(true);
+        }
 
+        hauptscheibeTrigger.SetActive(false);
+        foreach (GameObject obj in federnTrigger)
+        {
+            obj.SetActive(true);
+        }
+
+        arrowHauptscheibe.SetActive(false);
+        arrowFedern.SetActive(true);
+
+        foreach(GameObject obj in federnObj)
+        {
+            obj.tag = "CurrentActiveObject";
+        }
+    }
+
+    public void Stifte()
+    {
+        foreach (GameObject obj in federnPreview)
+        {
+            obj.SetActive(false);
+        }
+        foreach(GameObject obj in stiftePreview)
+        {
+            obj.SetActive(true);
+        }
+
+        hauptscheibeTrigger.SetActive(false);
+        foreach (GameObject obj in federnTrigger)
+        {
+            obj.SetActive(false);
+        }
+        foreach(GameObject obj in stifteTrigger)
+        {
+            obj.SetActive(true);
+        }
+
+        arrowFedern.SetActive(true);
+        arrowStifte.SetActive(false);
+
+        foreach (GameObject obj in stifteObj)
+        {
+            obj.tag = "CurrentActiveObject";
+        }
     }
 
 
+    public void Akkuschrauber()
+    {
+
+    }
 }

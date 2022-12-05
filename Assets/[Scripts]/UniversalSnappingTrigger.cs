@@ -71,7 +71,19 @@ public class UniversalSnappingTrigger : MonoBehaviour
             // Skripte werden ausgeschaltet???
 
             // Tag wird zurückgesetzt
-            other.tag = "Untagged";
+            other.tag = "NotActiveObject";
+        }
+        else if(other.tag == "NotActiveObject")
+        {
+            assemblyManagerScript.PreviewsRed();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "NotActiveObject")
+        {
+            assemblyManagerScript.PreviewsGreen();
         }
     }
 }

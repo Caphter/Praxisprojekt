@@ -28,6 +28,16 @@ public class AssemblyManager : MonoBehaviour
     public List<GameObject> federnPreview;
     public List<GameObject> stiftePreview;
 
+    public Material previewGreen;
+    public Material previewRed;
+
+    [Header("Snap Trigger:")]
+    public GameObject mittelscheibeTrigger;
+    public GameObject aussenscheibeVorneTrigger;
+    public GameObject hauptscheibeTrigger;
+    public List<GameObject> federnTrigger;
+    public List<GameObject> stifteTrigger;
+
     [Header("Real Gameobjects:")]
     public GameObject mittelscheibeObj;
     public GameObject aussenscheibeVorneObj;
@@ -45,10 +55,39 @@ public class AssemblyManager : MonoBehaviour
     public GameObject arrowStifte;
 
 
-
     private void Start()
     {
         NextStepDecider();
+    }
+
+    public void PreviewsRed()
+    {
+        mittelscheibePreview.GetComponent<Renderer>().material = previewRed;
+        aussenscheibeVornePreview.GetComponent<Renderer>().material = previewRed;
+        hauptscheibePreview.GetComponent<Renderer>().material = previewRed;
+        foreach(GameObject obj in federnPreview)
+        {
+            obj.GetComponent<Renderer>().material = previewRed;
+        }
+        foreach(GameObject obj in stiftePreview)
+        {
+            obj.GetComponent<Renderer>().material = previewRed;
+        }
+    }
+
+    public void PreviewsGreen()
+    {
+        mittelscheibePreview.GetComponent<Renderer>().material = previewGreen;
+        aussenscheibeVornePreview.GetComponent<Renderer>().material = previewGreen;
+        hauptscheibePreview.GetComponent<Renderer>().material = previewGreen;
+        foreach (GameObject obj in federnPreview)
+        {
+            obj.GetComponent<Renderer>().material = previewGreen;
+        }
+        foreach (GameObject obj in stiftePreview)
+        {
+            obj.GetComponent<Renderer>().material = previewGreen;
+        }
     }
 
     public void NextStepDecider()
@@ -85,7 +124,16 @@ public class AssemblyManager : MonoBehaviour
 
     public void AussenscheibeVorne()
     {
-        Debug.Log("Aussenscheibe Vorne Schritt");
+        mittelscheibePreview.SetActive(false);
+        aussenscheibeVornePreview.SetActive(true);
+
+        mittelscheibeTrigger.SetActive(false);
+        aussenscheibeVorneTrigger.SetActive(true);
+
+        arrowMittelscheibe.SetActive(false);
+        arrowAussenscheibeVorne.SetActive(true);
+
+        aussenscheibeVorneObj.tag = "CurrentActiveObject";
     }
 
     public void Akkuschrauber()

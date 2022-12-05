@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 67289603}
   m_Layer: 11
   m_Name: Feder 6
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2622,7 +2622,7 @@ GameObject:
   - component: {fileID: 193472183}
   m_Layer: 11
   m_Name: Feder 4
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4506,7 +4506,7 @@ GameObject:
   - component: {fileID: 286845104}
   m_Layer: 11
   m_Name: Feder 3
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15848,7 +15848,7 @@ GameObject:
   - component: {fileID: 1271554805}
   m_Layer: 11
   m_Name: Stift 2
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17006,6 +17006,22 @@ MonoBehaviour:
   - {fileID: 846849887}
   - {fileID: 1860829192}
   - {fileID: 1283768809}
+  previewGreen: {fileID: 2100000, guid: 91107e79a62b1584f8fdc2618c8bae5f, type: 2}
+  previewRed: {fileID: 2100000, guid: b3d2cad0ca0c7b44d95e74e1b2727bb2, type: 2}
+  mittelscheibeTrigger: {fileID: 921285421}
+  aussenscheibeVorneTrigger: {fileID: 1549256517}
+  hauptscheibeTrigger: {fileID: 1331031717}
+  federnTrigger:
+  - {fileID: 255904792}
+  - {fileID: 256812425}
+  - {fileID: 514496643}
+  - {fileID: 1860314970}
+  - {fileID: 1570767040}
+  - {fileID: 1252166836}
+  stifteTrigger:
+  - {fileID: 1263895304}
+  - {fileID: 1438532604}
+  - {fileID: 233862222}
   mittelscheibeObj: {fileID: 1785029548}
   aussenscheibeVorneObj: {fileID: 2016397135}
   aussenscheibeHintenObj: {fileID: 153117426}
@@ -18822,7 +18838,7 @@ GameObject:
   - component: {fileID: 1501529104}
   m_Layer: 11
   m_Name: Stift 1
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20382,7 +20398,7 @@ GameObject:
   - component: {fileID: 1662775508}
   m_Layer: 11
   m_Name: Vorder-Deck-Scheibe
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21344,7 +21360,7 @@ GameObject:
   - component: {fileID: 1759414381}
   m_Layer: 11
   m_Name: Hauptscheibe
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23896,7 +23912,7 @@ GameObject:
   - component: {fileID: 1915243961}
   m_Layer: 11
   m_Name: Stift 3
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25141,7 +25157,7 @@ GameObject:
   - component: {fileID: 2016397143}
   m_Layer: 11
   m_Name: "\xC4u\xDFere Scheibe vorne"
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25773,7 +25789,7 @@ GameObject:
   - component: {fileID: 2043682729}
   m_Layer: 11
   m_Name: Feder 5
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26389,7 +26405,7 @@ GameObject:
   - component: {fileID: 2077444848}
   m_Layer: 11
   m_Name: Feder 2
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27343,7 +27359,7 @@ GameObject:
   - component: {fileID: 2145008323}
   m_Layer: 11
   m_Name: Feder 1
-  m_TagString: Untagged
+  m_TagString: NotActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

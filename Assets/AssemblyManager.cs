@@ -36,6 +36,15 @@ public class AssemblyManager : MonoBehaviour
     public List<GameObject> federnObj;
     public List<GameObject> stifteObj;
 
+    [Header("Arrows:")]
+    public GameObject arrowMittelscheibe;
+    public GameObject arrowAussenscheibeVorne;
+    public GameObject arrowHauptscheibe;
+    public GameObject arrowAkkuschrauber;
+    public GameObject arrowFedern;
+    public GameObject arrowStifte;
+
+
 
     private void Start()
     {

@@ -156,6 +156,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Calibration\SG_XR_CalibrationMenu.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_GestureLayer.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\VR\SG_XR_Setup.cs" />
+    <Compile Include="Assets\AssemblyManager.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_DebugGesture.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_Debugger.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_User.cs" />
@@ -201,7 +202,6 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\AssemblyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

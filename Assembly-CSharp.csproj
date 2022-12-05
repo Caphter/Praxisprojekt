@@ -102,6 +102,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Controls\SG_DropZone.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleInteractionGlow.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Controls\SG_HandDetector.cs" />
+    <Compile Include="Assets\[Scripts]\UniversalSnappingTrigger.cs" />
     <Compile Include="Assets\Samples\Varjo XR Plugin\3.2.0\HDRP Samples\Shared\Scripts\Teleporter.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\IHandPoseProvider.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\3. Interaction Callbacks\Scripts\TransformTool.cs" />
@@ -202,7 +203,6 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\[Scripts]\UniversalSnappingTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

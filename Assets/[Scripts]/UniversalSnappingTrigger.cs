@@ -25,8 +25,11 @@ public class UniversalSnappingTrigger : MonoBehaviour
         // Bewegt das Object zu der gezielten Position
         if (triggered)
         {
-            collidedObject.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
-            collidedObject.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, targetPosition, positionSpeed * Time.deltaTime);
+            collidedObject.transform.localPosition = targetPosition;
+            collidedObject.transform.localRotation = targetRotation;
+
+            //collidedObject.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+            //collidedObject.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, targetPosition, positionSpeed * Time.deltaTime);
         }
     }
 
@@ -66,6 +69,9 @@ public class UniversalSnappingTrigger : MonoBehaviour
             collidedObject = other.gameObject;
 
             // Skripte werden ausgeschaltet???
+
+            // Tag wird zurückgesetzt
+            other.tag = "Untagged";
         }
     }
 }

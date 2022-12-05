@@ -85,7 +85,7 @@ public class AssemblyManager : MonoBehaviour
 
     public void AussenscheibeVorne()
     {
-
+        Debug.Log("Aussenscheibe Vorne Schritt");
     }
 
     public void Akkuschrauber()

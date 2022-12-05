@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &45876221
 Transform:
   m_ObjectHideFlags: 0
@@ -2242,7 +2242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170375909}
   m_Layer: 11
-  m_Name: Snapping Preview Models
+  m_Name: SNAPPING PREVIEW MODELS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2537,7 +2537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &190364208
 Transform:
   m_ObjectHideFlags: 0
@@ -3392,7 +3392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &218834217
 Transform:
   m_ObjectHideFlags: 0
@@ -3500,6 +3500,10 @@ PrefabInstance:
     - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_Name
       value: Arrow Akkuschrauber
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4963712128311031630, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_RootOrder
@@ -3637,7 +3641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &233862223
 Transform:
   m_ObjectHideFlags: 0
@@ -3685,6 +3689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &236662140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,7 +3845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &255904793
 Transform:
   m_ObjectHideFlags: 0
@@ -3881,6 +3893,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &256408043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,7 +4000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &256812426
 Transform:
   m_ObjectHideFlags: 0
@@ -4028,6 +4048,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &257342373
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,7 +5100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &316208262
 Transform:
   m_ObjectHideFlags: 0
@@ -5738,7 +5766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &403927483
 Transform:
   m_ObjectHideFlags: 0
@@ -6037,7 +6065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &426003183
 Transform:
   m_ObjectHideFlags: 0
@@ -6630,6 +6658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow Aussenscheibe Vorne
       objectReference: {fileID: 0}
+    - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4963712128311031630, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7170,7 +7202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &514496644
 Transform:
   m_ObjectHideFlags: 0
@@ -7218,6 +7250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1001 &516698653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8064,7 +8104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617628461}
   m_Layer: 11
-  m_Name: Snapping Trigger
+  m_Name: SNAPPING TRIGGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8978,6 +9018,10 @@ PrefabInstance:
     - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_Name
       value: Arrow Hauptscheibe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4963712128311031630, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_RootOrder
@@ -10055,6 +10099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow Federn
       objectReference: {fileID: 0}
+    - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4963712128311031630, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10367,7 +10415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &781507781
 Transform:
   m_ObjectHideFlags: 0
@@ -11192,7 +11240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &846849888
 Transform:
   m_ObjectHideFlags: 0
@@ -11814,6 +11862,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: -0.007, y: 0.003, z: -0.014}
+  targetRotation: {x: 0, y: 0, z: 0.00021816615, w: 1}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1001 &941684389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13661,8 +13717,8 @@ Transform:
   m_Children:
   - {fileID: 2016397136}
   - {fileID: 153117427}
-  - {fileID: 1785029549}
   - {fileID: 1759414374}
+  - {fileID: 1785029549}
   m_Father: {fileID: 645812741}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 64.692, y: 0, z: 0}
@@ -15432,7 +15488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1252166837
 Transform:
   m_ObjectHideFlags: 0
@@ -15480,6 +15536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1001 &1255991773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15626,7 +15690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1263895305
 Transform:
   m_ObjectHideFlags: 0
@@ -15674,6 +15738,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &1265269421
 GameObject:
   m_ObjectHideFlags: 0
@@ -16186,7 +16258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1283768810
 Transform:
   m_ObjectHideFlags: 0
@@ -16603,7 +16675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1331031718
 Transform:
   m_ObjectHideFlags: 0
@@ -16652,6 +16724,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1001 &1333650437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16847,6 +16927,7 @@ GameObject:
   - component: {fileID: 1369082725}
   - component: {fileID: 1369082726}
   - component: {fileID: 1369082727}
+  - component: {fileID: 1369082728}
   m_Layer: 0
   m_Name: Interactables
   m_TagString: Untagged
@@ -16946,6 +17027,22 @@ MonoBehaviour:
   arrowAkkuschrauber: {fileID: 224416544}
   arrowFedern: {fileID: 775180332}
   arrowStifte: {fileID: 1454606054}
+--- !u!114 &1369082728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369082724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933f13d48c681d48b14750922ac906d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comment: 'Ablauf des Snappings:
+
+'
+  _isEditing: 0
 --- !u!1 &1371285609
 GameObject:
   m_ObjectHideFlags: 0
@@ -17598,7 +17695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1438532605
 Transform:
   m_ObjectHideFlags: 0
@@ -17646,6 +17743,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &1441620530
 GameObject:
   m_ObjectHideFlags: 0
@@ -17954,6 +18059,10 @@ PrefabInstance:
     - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_Name
       value: Arrow Stifte
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963712128311031628, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4963712128311031630, guid: bdf684b3d5e4a42479af54007a45567d, type: 3}
       propertyPath: m_RootOrder
@@ -19455,7 +19564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1549256518
 Transform:
   m_ObjectHideFlags: 0
@@ -19503,6 +19612,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1001 &1566757447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19630,7 +19747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1570767041
 Transform:
   m_ObjectHideFlags: 0
@@ -19678,6 +19795,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &1587802318
 GameObject:
   m_ObjectHideFlags: 0
@@ -20102,7 +20227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639593998}
   m_Layer: 0
-  m_Name: Drop Trigger Zones
+  m_Name: DROP TRIGGER ZONES
   m_TagString: Deadzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21097,7 +21222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746000388}
   m_Layer: 0
-  m_Name: Arrow Indicators
+  m_Name: ARROW INDICATORS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21237,7 +21362,7 @@ Transform:
   m_Children:
   - {fileID: 1662775507}
   m_Father: {fileID: 1060819322}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 6.026, y: 0.788, z: 10.088}
 --- !u!23 &1759414375
 MeshRenderer:
@@ -21780,7 +21905,7 @@ GameObject:
   - component: {fileID: 1785029556}
   m_Layer: 11
   m_Name: "\xC4u\xDFere Zwischenscheibe"
-  m_TagString: Untagged
+  m_TagString: CurrentActiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21797,7 +21922,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1060819322}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 12.077, y: 1.887, z: 10.261}
 --- !u!23 &1785029550
 MeshRenderer:
@@ -21884,7 +22009,7 @@ MonoBehaviour:
     colliderType: 8
     centre: {x: -0.0009874701, y: 0, z: 0.4541125}
     rotation: {x: 0, y: 0, z: 0}
-    size: {x: 3.9, y: 3.9, z: 0.11}
+    size: {x: 3.9, y: 3.9, z: 0.17}
     flipFaces: 0
     circleVertices: 16
     circleTwoSided: 0
@@ -22905,7 +23030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1860314971
 Transform:
   m_ObjectHideFlags: 0
@@ -22953,6 +23078,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb92a040a6f3774c85e6afa8fc61b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterStifte: 0
+  counterFedern: 0
+  baseObject: {fileID: 153117426}
+  assemblyManagerScript: {fileID: 1369082727}
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationSpeed: 1
+  positionSpeed: 1
 --- !u!1 &1860829192
 GameObject:
   m_ObjectHideFlags: 0
@@ -22970,7 +23103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1860829193
 Transform:
   m_ObjectHideFlags: 0
@@ -23237,7 +23370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1892933740
 Transform:
   m_ObjectHideFlags: 0

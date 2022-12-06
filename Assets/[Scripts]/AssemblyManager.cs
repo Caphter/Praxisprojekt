@@ -106,10 +106,10 @@ public class AssemblyManager : MonoBehaviour
             case 3:
                 Federn();
                 break;
-            case 4:
+            case 9:
                 Stifte();
                 break;
-            case 5:
+            case 12:
                 Akkuschrauber();
                 break;
         }
@@ -124,10 +124,8 @@ public class AssemblyManager : MonoBehaviour
 
     public void AussenscheibeVorne()
     {
-        mittelscheibePreview.SetActive(false);
         aussenscheibeVornePreview.SetActive(true);
 
-        mittelscheibeTrigger.SetActive(false);
         aussenscheibeVorneTrigger.SetActive(true);
 
         arrowMittelscheibe.SetActive(false);
@@ -138,10 +136,10 @@ public class AssemblyManager : MonoBehaviour
 
     public void Hauptscheibe()
     {
-        aussenscheibeVornePreview.SetActive(false);
+        aussenscheibeHintenObj.GetComponent<Collider>().transform.position = new Vector3(0f, 0f, 0.49f);
+
         hauptscheibePreview.SetActive(true);
 
-        aussenscheibeVorneTrigger.SetActive(false);
         hauptscheibeTrigger.SetActive(true);
 
         arrowAussenscheibeVorne.SetActive(false);
@@ -152,13 +150,11 @@ public class AssemblyManager : MonoBehaviour
 
     public void Federn()
     {
-        hauptscheibePreview.SetActive(false);
         foreach(GameObject obj in federnPreview)
         {
             obj.SetActive(true);
         }
 
-        hauptscheibeTrigger.SetActive(false);
         foreach (GameObject obj in federnTrigger)
         {
             obj.SetActive(true);
@@ -175,27 +171,18 @@ public class AssemblyManager : MonoBehaviour
 
     public void Stifte()
     {
-        foreach (GameObject obj in federnPreview)
-        {
-            obj.SetActive(false);
-        }
         foreach(GameObject obj in stiftePreview)
         {
             obj.SetActive(true);
         }
 
-        hauptscheibeTrigger.SetActive(false);
-        foreach (GameObject obj in federnTrigger)
-        {
-            obj.SetActive(false);
-        }
         foreach(GameObject obj in stifteTrigger)
         {
             obj.SetActive(true);
         }
 
-        arrowFedern.SetActive(true);
-        arrowStifte.SetActive(false);
+        arrowFedern.SetActive(false);
+        arrowStifte.SetActive(true);
 
         foreach (GameObject obj in stifteObj)
         {

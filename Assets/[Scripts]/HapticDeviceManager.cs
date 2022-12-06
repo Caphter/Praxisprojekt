@@ -25,10 +25,6 @@ public class HapticDeviceManager : MonoBehaviour
     - Für Sense Gloves gleiches Prinzip aber mit Trackern / Vielleicht schauen, ob es einen anderen Input gibt, der SG als aktives Gerät besser determinieren kann
     */
 
-
-    private bool controllerActivated = false;
-    private bool trackerActivated = false;
-
     private float timerReset = 0;
     public float timerTriggerAmount;
     public int offsetZeroCounterTriggerAmount;
@@ -85,7 +81,7 @@ public class HapticDeviceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        checkActiveHapticDevice();
+        //checkActiveHapticDevice();
 
         posRightController = goRightController.transform.localPosition;
         posLeftController = goLeftController.transform.localPosition;
@@ -217,7 +213,7 @@ public class HapticDeviceManager : MonoBehaviour
     }
 
     
-    public void checkActiveHapticDevice()
+    /*public void checkActiveHapticDevice()
     {
         // initiales zurücksetzen der tracking-Variablen für neue Iteration
         controllerActivated = false;
@@ -245,5 +241,5 @@ public class HapticDeviceManager : MonoBehaviour
 
         // UI Anzeige, dass Devices nicht aktiviert sind
     }
-    
+    */
 }

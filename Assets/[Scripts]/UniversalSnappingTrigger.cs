@@ -2,35 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Leap.Unity.Interaction;
 
 public class UniversalSnappingTrigger : MonoBehaviour
 {
-    public int counterStifte = 0;
-    public int counterFedern = 0;
+    static public int counterStifte = 0;
+    static public int counterFedern = 0;
 
     public GameObject baseObject;
     public AssemblyManager assemblyManagerScript;
 
-    public Vector3 targetPosition;
-    public Quaternion targetRotation;
+    public GameObject targetPreviewObject;
     public float rotationSpeed;
     public float positionSpeed;
-    private bool triggered = false;
     private GameObject collidedObject;
 
 
     // Update is called once per frame
     void Update()
     {
-        // Bewegt das Object zu der gezielten Position
-        if (triggered)
-        {
-            collidedObject.transform.localPosition = targetPosition;
-            collidedObject.transform.localRotation = targetRotation;
 
-            //collidedObject.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
-            //collidedObject.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, targetPosition, positionSpeed * Time.deltaTime);
-        }
+    }
+
+    public void TransformPosition()
+    {
+        collidedObject.transform.localPosition = targetPreviewObject.transform.localPosition;
+        collidedObject.transform.localRotation = targetPreviewObject.transform.localRotation;
+
+        //collidedObject.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+        //collidedObject.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, targetPosition, positionSpeed * Time.deltaTime)
     }
 
 
@@ -53,7 +53,7 @@ public class UniversalSnappingTrigger : MonoBehaviour
             {
                 other.gameObject.GetComponent<ObjectDropped>().isBuildIn = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.Log("das kollidierte Objekt hat das Dropped-Skript nicht!");
             }
@@ -65,13 +65,23 @@ public class UniversalSnappingTrigger : MonoBehaviour
             assemblyManagerScript.NextStepDecider();
 
             // Starte die Positions-Transformation
-            triggered = true;
             collidedObject = other.gameObject;
+            TransformPosition();
 
-            // Skripte werden ausgeschaltet???
+            // Skripte werden ausgeschaltet
+            collidedObject.GetComponent<Collider>().enabled = false;
+            collidedObject.GetComponent<InteractionBehaviour>().enabled = false;
+            collidedObject.GetComponent<Rigidbody>().isKinematic = true;
 
             // Tag wird zurückgesetzt
             other.tag = "NotActiveObject";
+
+            // deaktiviert das Preview Model des getriggerten Colliders
+            targetPreviewObject.SetActive(false);
+
+            // deaktiviert den aktullen Trigger
+            this.gameObject.SetActive(false);
+
         }
         else if(other.tag == "NotActiveObject")
         {

@@ -124,7 +124,7 @@ public class AssemblyManager : MonoBehaviour
 
     public void AussenscheibeVorne()
     {
-        aussenscheibeVornePreview.SetActive(true);
+        //aussenscheibeVornePreview.SetActive(true);
 
         aussenscheibeVorneTrigger.SetActive(true);
 
@@ -138,7 +138,7 @@ public class AssemblyManager : MonoBehaviour
     {
         aussenscheibeHintenObj.GetComponent<Collider>().transform.position = new Vector3(0f, 0f, 0.49f);
 
-        hauptscheibePreview.SetActive(true);
+        //hauptscheibePreview.SetActive(true);
 
         hauptscheibeTrigger.SetActive(true);
 
@@ -150,10 +150,11 @@ public class AssemblyManager : MonoBehaviour
 
     public void Federn()
     {
+        /*
         foreach(GameObject obj in federnPreview)
         {
             obj.SetActive(true);
-        }
+        }*/
 
         foreach (GameObject obj in federnTrigger)
         {
@@ -171,10 +172,11 @@ public class AssemblyManager : MonoBehaviour
 
     public void Stifte()
     {
+        /*
         foreach(GameObject obj in stiftePreview)
         {
             obj.SetActive(true);
-        }
+        }*/
 
         foreach(GameObject obj in stifteTrigger)
         {

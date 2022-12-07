@@ -164,6 +164,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_Waveform.cs" />
     <Compile Include="Assets\SenseGlove\Models\DK1CAD\SG_DK1Model.cs" />
     <Compile Include="Assets\[Scripts]\Tangible Scripts\HandController.cs" />
+    <Compile Include="Assets\CheckIfPickedUp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialProperties.cs" />
     <Compile Include="Assets\[Scripts]\InteractionScriptManager.cs" />
@@ -236,7 +237,7 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\CheckIfPickedUp.cs" />
+    <Compile Include="Assets\IsPickedUpManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

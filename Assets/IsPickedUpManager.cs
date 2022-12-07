@@ -26,14 +26,12 @@ public class IsPickedUpManager : MonoBehaviour
     {
         if (checkingScript.objectMoving)
         {
-            this.gameObject.layer = LayerMoving;
-            correspondingPreviewObject.SetActive(true);
+            //this.gameObject.layer = LayerMoving;
             correspondingArrow.SetActive(false);
         }
-        else
+        else if(!checkingScript.objectMoving && this.gameObject.tag == "CurrentActiveObject")
         {
-            this.gameObject.layer = LayerNormal;
-            correspondingPreviewObject.SetActive(false);
+            //this.gameObject.layer = LayerNormal;
             correspondingArrow.SetActive(true);
         }
 

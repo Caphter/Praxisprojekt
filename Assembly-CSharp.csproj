@@ -135,6 +135,7 @@
     <Compile Include="Assets\[Extern Assets]\Laboratory\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\[Scripts]\AutosetSGTrackers.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_SceneControl.cs" />
+    <Compile Include="Assets\IsPickedUpManager.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleScaleUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_FingerPassThrough.cs" />
@@ -237,7 +238,6 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\IsPickedUpManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

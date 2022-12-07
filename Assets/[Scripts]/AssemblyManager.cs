@@ -94,9 +94,6 @@ public class AssemblyManager : MonoBehaviour
     {
         switch (assemblyStepCounter)
         {
-            case 0:
-                InitialSetupMittelscheibe();
-                break;
             case 1:
                 AussenscheibeVorne();
                 break;
@@ -117,14 +114,9 @@ public class AssemblyManager : MonoBehaviour
         assemblyStepCounter++;
     }
 
-    public void InitialSetupMittelscheibe()
-    {
-        // Alles was am Anfang gesetzt werden muss
-    }
-
     public void AussenscheibeVorne()
     {
-        //aussenscheibeVornePreview.SetActive(true);
+        aussenscheibeVornePreview.SetActive(true);
 
         aussenscheibeVorneTrigger.SetActive(true);
 
@@ -136,9 +128,9 @@ public class AssemblyManager : MonoBehaviour
 
     public void Hauptscheibe()
     {
-        aussenscheibeHintenObj.GetComponent<Collider>().transform.position = new Vector3(0f, 0f, 0.49f);
+        //aussenscheibeHintenObj.GetComponent<Collider>().transform.position = new Vector3(0f, 0f, 0.49f);
 
-        //hauptscheibePreview.SetActive(true);
+        hauptscheibePreview.SetActive(true);
 
         hauptscheibeTrigger.SetActive(true);
 
@@ -150,11 +142,11 @@ public class AssemblyManager : MonoBehaviour
 
     public void Federn()
     {
-        /*
+        
         foreach(GameObject obj in federnPreview)
         {
             obj.SetActive(true);
-        }*/
+        }
 
         foreach (GameObject obj in federnTrigger)
         {
@@ -172,11 +164,11 @@ public class AssemblyManager : MonoBehaviour
 
     public void Stifte()
     {
-        /*
+        
         foreach(GameObject obj in stiftePreview)
         {
             obj.SetActive(true);
-        }*/
+        }
 
         foreach(GameObject obj in stifteTrigger)
         {

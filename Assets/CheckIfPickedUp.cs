@@ -5,9 +5,9 @@ using UnityEngine;
 public class CheckIfPickedUp : MonoBehaviour
 {
     [Header("Object Moving:")]
-    private Transform currentObjTrans;
-    private Transform[] transformArr;
-    private int arrayIndex = 0;
+    private Vector3 currentObjTrans;
+    public Vector3[] transformArr;
+    public int arrayIndex = 0;
     public bool objectMoving = false;
 
     //[Header("Hand Distance:")]
@@ -26,22 +26,25 @@ public class CheckIfPickedUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transformArr = new Transform[3];
+        transformArr = new Vector3[3];
 
-        transformArr[arrayIndex] = this.gameObject.transform;
-        
-        
+        transformArr[0].x = this.gameObject.transform.localPosition.x;
+        transformArr[0].y = this.gameObject.transform.localPosition.y;
+        transformArr[0].z = this.gameObject.transform.localPosition.z;
     }
 
     public void setNextArrayIndex()
     {
-        transformArr[arrayIndex] = currentObjTrans;
+        transformArr[arrayIndex].x = currentObjTrans.x;
+        transformArr[arrayIndex].y = currentObjTrans.y;
+        transformArr[arrayIndex].z = currentObjTrans.z;
 
-        if(arrayIndex == 2)
+
+        if (arrayIndex >= 2)
         {
             arrayIndex = 0;
         }
-        else
+        else if(arrayIndex < 2)
         {
             arrayIndex++;
         }
@@ -51,13 +54,12 @@ public class CheckIfPickedUp : MonoBehaviour
     void Update()
     {
         // aktualisiert die Position abhängig der Position des Objects
-        currentObjTrans = this.gameObject.transform;
+        currentObjTrans = this.gameObject.transform.localPosition;
 
         // Wenn die Position nicht mit der Ursprungsposition übereinstimmt, triggeren die Timer und Abfragen
-        if (transformArr[arrayIndex] != this.gameObject.transform && !triggered)
+        if ((transformArr[0].x != currentObjTrans.x || transformArr[0].y != currentObjTrans.y || transformArr[0].z != currentObjTrans.z) && !triggered)
         {
             triggered = true;
-            arrayIndex++;
         }
 
         // Wenn eine Veränderung erkannt wurde, dann werden die Timer gestartet, und alle 1/6sec der entsprechend nächste Eintrag im Array gesetzt und alle 1/3 gecheckt, ob alle Transforms gleich sind, wenn nicht, ist das Objekt in Bewegung
@@ -66,15 +68,15 @@ public class CheckIfPickedUp : MonoBehaviour
             intervallTimer += Time.deltaTime;
             cycleTimer += Time.deltaTime;
 
-            if (intervallTimer >= 1 / 6f)
+            if (intervallTimer >= 1 / 3f)
             {
                 setNextArrayIndex();
                 intervallTimer = 0;
             }
 
-            if (cycleTimer >= 1 / 3f)
+            if (cycleTimer >= 1f)
             {
-                if (transformArr[0] == transformArr[1] && transformArr[0] == transformArr[2])
+                if (transformArr[0].x == transformArr[1].x && transformArr[0].y == transformArr[2].y)
                 {
                     objectMoving = false;
                     triggered = false;
@@ -83,6 +85,8 @@ public class CheckIfPickedUp : MonoBehaviour
                 {
                     objectMoving = true;
                 }
+
+                cycleTimer = 0f;
             }
         }
 

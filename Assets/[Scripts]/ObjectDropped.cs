@@ -38,6 +38,7 @@ public class ObjectDropped : MonoBehaviour
     {
         if(other.tag == "Deadzone" && !isBuildIn)
         {
+            Debug.Log("Reset");
             // setzt die Velocity auf 0, damit beim Reset nicht weiterfliegt
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;

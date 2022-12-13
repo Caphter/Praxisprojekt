@@ -8,6 +8,7 @@ public class IsPickedUpManager : MonoBehaviour
 
     public GameObject correspondingPreviewObject;
     public GameObject correspondingArrow;
+    public List<GameObject> correspondingStandColliders;
 
     private int LayerNormal;
     private int LayerMoving;
@@ -28,11 +29,27 @@ public class IsPickedUpManager : MonoBehaviour
         {
             //this.gameObject.layer = LayerMoving;
             correspondingArrow.SetActive(false);
+
+            if(correspondingStandColliders != null)
+            {
+                foreach (GameObject obj in correspondingStandColliders)
+                {
+                    //obj.GetComponent<Collider>().enabled = false;
+                }
+            }
         }
         else if(!checkingScript.objectMoving && this.gameObject.tag == "CurrentActiveObject")
         {
             //this.gameObject.layer = LayerNormal;
             correspondingArrow.SetActive(true);
+
+            if (correspondingStandColliders != null)
+            {
+                foreach (GameObject obj in correspondingStandColliders)
+                {
+                    //obj.GetComponent<Collider>().enabled = true;
+                }
+            }
         }
 
 

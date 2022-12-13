@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_HandPoser3D.cs" />
+    <Compile Include="Assets\[Scripts]\LayerAdjust.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Devices\SG_Connections.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\VR\SG_XR_Devices.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Example Assets\Scripts\EditorURL.cs" />
@@ -135,7 +136,7 @@
     <Compile Include="Assets\[Extern Assets]\Laboratory\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\[Scripts]\AutosetSGTrackers.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_SceneControl.cs" />
-    <Compile Include="Assets\IsPickedUpManager.cs" />
+    <Compile Include="Assets\[Scripts]\IsPickedUpManager.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleScaleUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_FingerPassThrough.cs" />
@@ -165,7 +166,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_Waveform.cs" />
     <Compile Include="Assets\SenseGlove\Models\DK1CAD\SG_DK1Model.cs" />
     <Compile Include="Assets\[Scripts]\Tangible Scripts\HandController.cs" />
-    <Compile Include="Assets\CheckIfPickedUp.cs" />
+    <Compile Include="Assets\[Scripts]\CheckIfPickedUp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialProperties.cs" />
     <Compile Include="Assets\[Scripts]\InteractionScriptManager.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_GestureLayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\VR\SG_XR_Setup.cs" />
+    <Compile Include="Assets\[Scripts]\AttachDrillToHandTracking.cs" />
     <Compile Include="Assets\[Scripts]\AssemblyManager.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_DebugGesture.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_HandFeedback.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Devices\SG_DeviceSelector.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Interaction\SG_Breakable.cs" />
+    <Compile Include="Assets\[Scripts]\KeepSceneAlive.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Feedback\SG_MaterialDetector.cs" />
     <Compile Include="Assets\[Scripts]\Drill\DrillScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_ShowGloveAngles.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\Common Example Assets\Scripts\SimpleRendererUtil.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Util\SG_SmoothMovement.cs" />
+    <Compile Include="Assets\SetParent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\SenseGlove\Scripts\Tracking\SG_HandModelInfo.cs" />
     <Compile Include="Assets\SenseGlove\Examples\Resources\SGEx_GloveDiagnostics.cs" />
@@ -238,7 +242,6 @@
     <Compile Include="Assets\[Extern Assets]\Extended Colliders 3D\ExtendedColliders3D.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\7. Moving Reference Frames\Scripts\LinearReferenceSpawner.cs" />
     <Compile Include="Assets\Samples\Ultraleap Tracking\5.13.0\Examples\Interaction Engine Examples\2. Basic UI\MovePoseExample.cs" />
-    <Compile Include="Assets\KeepSceneAlive.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

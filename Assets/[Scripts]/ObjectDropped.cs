@@ -9,6 +9,8 @@ public class ObjectDropped : MonoBehaviour
     public bool isMainObject = false;
     public bool isBuildIn = false;
 
+    public GameObject parentBeforeBuildIn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,10 @@ public class ObjectDropped : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        if (!isBuildIn)
+        {
+            this.gameObject.transform.SetParent(parentBeforeBuildIn.transform);
+        }
     }
 
     public void UIReset()

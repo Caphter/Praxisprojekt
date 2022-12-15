@@ -23,6 +23,7 @@ public class UniversalSnappingTrigger : MonoBehaviour
     public GameObject Controller1;
     public GameObject Controller2;
 
+    public GameObject postSnapObject;
     
 
 
@@ -39,18 +40,6 @@ public class UniversalSnappingTrigger : MonoBehaviour
 
         //collidedObject.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
         //collidedObject.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, targetPosition, positionSpeed * Time.deltaTime)
-    }
-
-    IEnumerator DisableControllerShortTime()
-    {
-        Controller1.GetComponent<Valve.VR.InteractionSystem.Hand>().DetachObject(collidedObject);
-        Controller2.GetComponent<Valve.VR.InteractionSystem.Hand>().DetachObject(collidedObject);
-
-        yield return new WaitForSeconds(2);
-        Debug.Log("hallo");
-
-        Controller1.GetComponent<Valve.VR.InteractionSystem.Hand>().enabled = true; ;
-        Controller2.GetComponent<Valve.VR.InteractionSystem.Hand>().enabled = true; ;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -80,26 +69,30 @@ public class UniversalSnappingTrigger : MonoBehaviour
                 Debug.Log("das kollidierte Objekt hat das Dropped-Skript nicht!");
             }
 
+            // Skripte werden ausgeschaltet
             Controller1.GetComponent<Valve.VR.InteractionSystem.Hand>().DetachObject(collidedObject);
             Controller2.GetComponent<Valve.VR.InteractionSystem.Hand>().DetachObject(collidedObject);
+
+            collidedObject.GetComponent<Collider>().enabled = false;
+            collidedObject.GetComponent<InteractionBehaviour>().enabled = false;
+            collidedObject.GetComponent<Rigidbody>().isKinematic = true;
+
+            collidedObject.SetActive(false);
+            postSnapObject.SetActive(true);
+
+            /*
+            
 
             // Setzt das Objekt als Kind von dem Base-Objekt
             other.gameObject.transform.SetParent(baseObject.transform);
 
-            // triggert die Funktion für den nächsten Bauschritt
-            assemblyManagerScript.NextStepDecider();
-
-
-
-            // Skripte werden ausgeschaltet
-            collidedObject.GetComponent<Collider>().enabled = false;
-            collidedObject.GetComponent<InteractionBehaviour>().enabled = false;
-            collidedObject.GetComponent<Rigidbody>().isKinematic = true;
-            //collidedObject.GetComponent<Interactable>().enabled = false;
-
 
 
             TransformPosition();
+            */
+
+            // triggert die Funktion für den nächsten Bauschritt
+            assemblyManagerScript.NextStepDecider();
 
             // Tag wird zurückgesetzt
             other.tag = "NotActiveObject";
@@ -107,7 +100,7 @@ public class UniversalSnappingTrigger : MonoBehaviour
             // deaktiviert das Preview Model des getriggerten Colliders
             targetPreviewObject.SetActive(false);
 
-            // deaktiviert den aktullen Trigger
+            // deaktiviert den aktuellen Trigger
             this.gameObject.SetActive(false);
 
         }

@@ -6,7 +6,6 @@ public class IsPickedUpManager : MonoBehaviour
 {
     private CheckIfPickedUp checkingScript;
 
-    public GameObject correspondingPreviewObject;
     public GameObject correspondingArrow;
     public List<GameObject> correspondingStandColliders;
 

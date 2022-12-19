@@ -189,5 +189,6 @@ public class AssemblyManager : MonoBehaviour
     public void Akkuschrauber()
     {
         arrowsSchrauben.SetActive(true);
+        arrowAkkuschrauber.SetActive(true);
     }
 }

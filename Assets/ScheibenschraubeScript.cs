@@ -5,10 +5,13 @@ using UnityEngine;
 public class ScheibenschraubeScript : MonoBehaviour
 {
     private bool isScrewedIn = false;
+    private bool finishExecuted = false;
     public static int screwedCount = 0;
 
+    public GameObject arrowAkkuschrauber;
     public GameObject correspondingArrow;
     public GameObject correspondingCheckmark;
+    public GameObject finishCanvas;
 
     IEnumerator TimeCheckmark()
     {
@@ -17,14 +20,30 @@ public class ScheibenschraubeScript : MonoBehaviour
         correspondingCheckmark.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider other)
+    IEnumerator AssemblyFinished()
     {
-        if(other.tag == "Drill")
+        arrowAkkuschrauber.SetActive(false);
+        yield return new WaitForSeconds(1);
+        finishCanvas.SetActive(true);
+        yield return new WaitForSeconds(3);
+        finishCanvas.SetActive(false);
+    }
+
+    // Enter auf Stay umschreiben, wenn ich wirklich den trigger implementiert habe
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Drill" && !isScrewedIn)
         {
             isScrewedIn = true;
             screwedCount++;
             correspondingArrow.SetActive(false);
             StartCoroutine(TimeCheckmark());
+        }
+
+        if(screwedCount >= 9 && !finishExecuted)
+        {
+            finishExecuted = true;
+            StartCoroutine(AssemblyFinished());
         }
     }
 

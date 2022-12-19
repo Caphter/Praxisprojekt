@@ -12,6 +12,7 @@ TagManager:
   - Deadzone
   - CurrentActiveObject
   - NotActiveObject
+  - Drill
   layers:
   - Default
   - TransparentFX

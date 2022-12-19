@@ -53,6 +53,7 @@ public class AssemblyManager : MonoBehaviour
     public GameObject arrowAkkuschrauber;
     public GameObject arrowFedern;
     public GameObject arrowStifte;
+    public GameObject arrowsSchrauben;
 
 
     private void Start()
@@ -187,6 +188,6 @@ public class AssemblyManager : MonoBehaviour
 
     public void Akkuschrauber()
     {
-
+        arrowsSchrauben.SetActive(true);
     }
 }

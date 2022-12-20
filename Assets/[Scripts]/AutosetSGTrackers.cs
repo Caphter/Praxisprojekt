@@ -47,7 +47,7 @@ public class AutosetSGTrackers : MonoBehaviour
                 AssignCorrespondingTrackerToIndex(i);
             }
 
-            //Debug.Log("test id " + i + ": " + id);
+            Debug.Log("test id " + i + ": " + id);
         }
     }
 

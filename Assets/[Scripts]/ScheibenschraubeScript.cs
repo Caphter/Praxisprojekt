@@ -27,6 +27,7 @@ public class ScheibenschraubeScript : MonoBehaviour
         finishCanvas.SetActive(true);
         yield return new WaitForSeconds(3);
         finishCanvas.SetActive(false);
+        finishExecuted = true;
     }
 
     // Enter auf Stay umschreiben, wenn ich wirklich den trigger implementiert habe

@@ -8,10 +8,26 @@ public class AutosetSGTrackers : MonoBehaviour
 {
     public SteamVR_TrackedObject trackerScriptRight;
     public SteamVR_TrackedObject trackerScriptLeft;
+    public SteamVR_TrackedObject trackerCache;
 
     bool rightAssigned = false;
     int indexOfFirstAssigned = 0;
 
+
+    public void SwitchHands()
+    {
+        trackerScriptRight.index = trackerScriptLeft.index;
+        trackerScriptLeft.index = trackerCache.index;
+
+        trackerCache.index = trackerScriptRight.index;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space)){
+            SwitchHands();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -50,27 +66,35 @@ public class AutosetSGTrackers : MonoBehaviour
             switch (index){
                 case 1:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device1;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device1;
                     break;
                 case 2:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device2;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device2;
                     break;
                 case 3:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device3;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device3;
                     break;
                 case 4:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device4;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device4;
                     break;
                 case 5:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device5;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device5;
                     break;
                 case 6:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device6;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device6;
                     break;
                 case 7:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device7;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device7;
                     break;
                 case 8:
                     trackerScriptRight.index = SteamVR_TrackedObject.EIndex.Device8;
+                    trackerCache.index = SteamVR_TrackedObject.EIndex.Device8;
                     break;
             }
         }

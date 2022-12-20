@@ -157,7 +157,7 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && timerDelayController > 3f)
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && timerDelayController > 4f)
                 {
                     ActivateController();
                     scriptManager.SetActiveController();

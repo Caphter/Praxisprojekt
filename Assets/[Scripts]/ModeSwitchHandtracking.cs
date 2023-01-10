@@ -39,6 +39,8 @@ public class ModeSwitchHandtracking : MonoBehaviour
         }
 
         lastValue = currentSliderValue;
+
+        Debug.Log(currentSliderValue.ToString());
     }
 
     // Update is called once per frame

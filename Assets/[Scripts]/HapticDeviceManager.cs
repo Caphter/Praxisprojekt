@@ -145,7 +145,7 @@ public class HapticDeviceManager : MonoBehaviour
         {
             counterOffsetZero++;
 
-            if(counterOffsetZero == offsetZeroCounterTriggerAmount && !handTrackingDevice.activeSelf)
+            if(counterOffsetZero == offsetZeroCounterTriggerAmount && !handTrackingDevice.activeSelf && uiManagerScript.isAutomaticMode)
             {
                 ActivateHandTracking();
                 scriptManager.SetActiveHandTracking();
@@ -157,14 +157,14 @@ public class HapticDeviceManager : MonoBehaviour
         {
             if(offsetPositionController >= thresholdController || offsetPositionTracker >= thresholdTracker)
             {
-                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && timerDelayController > 4f)
+                if(offsetPositionController > offsetPositionTracker && controllerDevice.transform.position.x < 15 && timerDelayController > 4f && uiManagerScript.isAutomaticMode)
                 {
                     ActivateController();
                     scriptManager.SetActiveController();
                     uiManagerScript.ActivateControllerUI();
                     counterOffsetZero = 0;
                 }
-                else if(offsetPositionController < offsetPositionTracker && !senseGlovesDevice.activeSelf)
+                else if(offsetPositionController < offsetPositionTracker && !senseGlovesDevice.activeSelf && uiManagerScript.isAutomaticMode)
                 {
                     ActivateSenseGloves();
                     uiManagerScript.ActivateSenseGlovesUI();
@@ -188,8 +188,6 @@ public class HapticDeviceManager : MonoBehaviour
         handTrackingDevice.SetActive(false);
         senseGlovesDevice.SetActive(true);
         Debug.Log("SG aktiviert");
-
-        // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
     public void ActivateController()
@@ -199,7 +197,6 @@ public class HapticDeviceManager : MonoBehaviour
         controllerDevice.transform.localPosition = new Vector3(0f, 0f, 0f);
         Debug.Log("Controller aktiviert");
 
-        // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
     public void ActivateHandTracking()
@@ -209,7 +206,6 @@ public class HapticDeviceManager : MonoBehaviour
         handTrackingDevice.SetActive(true);
 
         Debug.Log("Hand Tracking aktiviert");
-        // Code für entsprechende Interaktions-Objekte zum passenden Device
     }
 
     

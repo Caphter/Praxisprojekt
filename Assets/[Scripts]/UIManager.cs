@@ -16,22 +16,6 @@ public class UIManager : MonoBehaviour
 
     public bool isAutomaticMode = true;
 
-    public void Test1()
-    {
-        Debug.Log("Test 1");
-    }public void Test2()
-    {
-        Debug.Log("Test 2");
-    }public void Test3()
-    {
-        Debug.Log("Test 3");
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -43,6 +27,8 @@ public class UIManager : MonoBehaviour
         iconController.SetActive(true);
         iconHandTracking.SetActive(false);
         iconSenseGloves.SetActive(false);
+
+        deviceManageScript.ActivateController();
     }
 
     public void ActivateHandTrackingUI()
@@ -51,6 +37,8 @@ public class UIManager : MonoBehaviour
         iconController.SetActive(false);
         iconHandTracking.SetActive(true);
         iconSenseGloves.SetActive(false);
+
+        deviceManageScript.ActivateHandTracking();
     }
 
     public void ActivateSenseGlovesUI()
@@ -59,5 +47,7 @@ public class UIManager : MonoBehaviour
         iconController.SetActive(false);
         iconHandTracking.SetActive(false);
         iconSenseGloves.SetActive(true);
+
+        deviceManageScript.ActivateSenseGloves();
     }
 }
